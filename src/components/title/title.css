@@ -1,7 +1,7 @@
-.title { 
+h1 { 
     color: #111; 
     font-family: 'Helvetica Neue', sans-serif; 
-    font-size: 160px; 
+    font-size: 150px; 
     font-weight: bold; 
     letter-spacing: -1px; 
     line-height: 1;
@@ -16,7 +16,7 @@ h2 {
     font-size: 30px; 
     font-weight: 300; 
     line-height: 32px; 
-    margin: 0 0 72px; 
+    margin: 0 0 15px; 
     text-align: center; 
 }
 
@@ -26,7 +26,7 @@ p {
     font-family: 'Helvetica Neue', sans-serif; 
     font-size: 14px; 
     line-height: 24px; 
-    margin: 0 0 24px; 
+    margin: 0 0 10px; 
     text-align: justify; 
     text-justify: inter-word; 
 }

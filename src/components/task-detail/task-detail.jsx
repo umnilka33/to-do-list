@@ -1,36 +1,70 @@
-import React, { Component } from 'react';
+import React, { Component, Fragment } from 'react';
+import { useParams } from 'react-router-dom';
+
 import { connect } from 'react-redux';
 import './task-detail.css';
 
+const getTaskDetails = (taskId, tasks) => {
+    for (let i = 0; i < tasks.length; i++) {
+        if (tasks[i].id == taskId) {
+            return {
+                text: tasks[i].text,
+                isDone: tasks[i].is_completed
+            }
+        }
+    }
+    return {
+        text: 'no text',
+        isDone: false
+    }
+}
+
 class TaskDetail extends Component {
-  state = {
-    task: {},
-  }
-  componentDidMount() {
-    const id = this.props.match.params.id || '';
-    console.log("id", id)
-  }
+    state = {
+        id: '',
+        tasks: {},
+        text: '',
+        isDone: false,
+    }
 
-  render() {
-      console.log(this.props)
-    /*const { post } = this.state;
-    const { title, body } = post;
+    componentDidMount() {
+        this.setState({ 
+            id: this.props.taskId,
+            tasks: this.props.tasks 
+        })
+    }
 
+    
+  
+    render() {
+        const { id, tasks, text, isDone } = this.state;
+        const details = getTaskDetails(id, tasks);
+      return (
+        <Fragment>
+            <h1>Task</h1>
+            <h2>Task ID: {id}</h2>
+            <p>Text: {details.text}</p>
+            <p>Status: {details.isDone? 'Complete' : 'In work'}</p>
+        </Fragment>
+      );
+    }
+  };
+  
+
+function GetTaskID(prop){
+    let tasks = prop.tasks;
+    	
+    // получаем параметры
+    const params = useParams();
+    const taskId = params.id;
+    
+    console.log(params)
     return (
-      <Fragment>
-        <h1>Task</h1>
-        <div>
-          <h2>{title}</h2>
-          <p>{body}</p>
-        </div>
-      </Fragment>
-    );*/
-    return (
-        <h2>Определить таск </h2>
-    )
-  }
-};
+        <TaskDetail taskId={taskId} tasks={tasks} />
+    );
+}
 
+//export default TaskDetail;
 export default connect(state => ({
     tasks: state.tasks,
-}))(TaskDetail);
+}))( GetTaskID, TaskDetail);

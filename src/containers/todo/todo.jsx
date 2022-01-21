@@ -39,7 +39,7 @@ class ToDo extends Component {
         const { tasks, completeTask, removeTask } = this.props;
         const isTasksExist = tasks && tasks.length > 0;
         return (
-            <div>
+            <div className='task-container'>
                 <ToDoInput onChange={this.handleInputChange} onKeyPress={this.handleAddTask} value={inputText} />
                 {isTasksExist && <ToDoList tasksList={tasks} completeTask={completeTask} removeTask={removeTask} />}
             </div>
