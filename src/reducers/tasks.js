@@ -1,6 +1,5 @@
 import { ADD_TASK, REMOVE_TASK, COMPLETE_TASK } from "../actions/constants";
 
-
 const TASKS = [];
 
 const tasks = (state = TASKS, { type, id, text, is_completed }) => {

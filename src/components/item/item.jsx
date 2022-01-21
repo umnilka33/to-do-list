@@ -11,9 +11,9 @@ const ToDoItem = ({ id, text, is_completed, completeTask, removeTask }) => (
                 <input onClick={() => completeTask(id)} type="checkbox" defaultChecked={is_completed ? 'checked' : ''} />
                 <div className="checkbox__checkmark"></div>
                 <div className="checkbox__body">
-                    <span className={is_completed ? 'completed' : ''}><Link to={`/${id}`} helloprop={111}>{text}</Link></span>
-                    <div onClick={() => removeTask(id)} className="fas fa-times" >&#10006;</div>
+                    <div className={is_completed ? 'completed' : ''}><Link to={`/task/${id}`}>{text}</Link></div>
                 </div>
+                <div onClick={() => removeTask(id)} className='delete'>&#10006;</div>
             </label>
         </div>
     </li>
@@ -30,7 +30,7 @@ ToDoItem.defaultProps = {
     id: 0,
     text: '',
     is_completed: false,
-    removeTask: () => {},
+    removeTask: () => { },
 }
 
 export default ToDoItem;

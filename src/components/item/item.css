@@ -1,40 +1,19 @@
 .item {
-    font-size: 24px;
-    border-bottom: 1px solid #ededed;
-    min-height: 60px;
-    display: flex;
-    align-items: center;
-    list-style: none;
-    padding: 0 16px 0 16px;
-    cursor: pointer;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    position: relative;
-  }
+  border-bottom: 1px solid #ededed;
+  min-height: 45px;
+  list-style: none;
+  padding: 0 16px 0 16px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+}
   
-  .completed {
-    text-decoration: line-through;
-  }
-  
-  .completed,
-  .fa-check-circle {
-    color: #fff;
-  }
-  
-  .fa-times {
-    transition: all .3s ease;
-    color: rgba(175, 47, 47, 0.15);
-  }
-  
-  .mark {
-    position: absolute;
-    left: 20px;
-  }
-  
-  .todo-item:hover .fa-times {
-    color: rgba(175, 47, 47, 0.9);
-  }
+.completed a{
+  text-decoration: line-through;
+  color: #fff;
+} 
 
 /* checkbox style */
 *,
@@ -55,12 +34,11 @@
   border-bottom: 1px solid #eee;
 }
 .checkboxes__item {
-  padding: 15px;
+  padding: 0px;
   width: 100%;
 }
 
 .checkbox.style-d {
-  display: inline-block;
   position: relative;
   padding-left: 30px;
   cursor: pointer;
@@ -68,6 +46,9 @@
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
 }
 .checkbox.style-d input {
   position: absolute;
@@ -88,12 +69,9 @@
 .checkbox.style-d:hover input:checked ~ .checkbox__checkmark {
   background-color: #ffffff;
 }
-.checkbox.style-d:hover input ~ .checkbox__body {
-  color: #15f728;
-}
 .checkbox.style-d .checkbox__checkmark {
   position: absolute;
-  top: 1px;
+  top: 8px;
   left: 0;
   height: 22px;
   width: 22px;
@@ -116,7 +94,6 @@
 }
 .checkbox.style-d .checkbox__body {
   color: #333;
-  line-height: 1.4;
   font-size: 16px;
   transition: color 0.25s ease;
 }
@@ -124,6 +101,17 @@
 /* tag a */
 a {
   text-decoration: none;
-  font-size: 24px;
+  font-size: 20px;
   font-family: "Dosis", sans-serif;
+  color: #000000;
+}
+
+.delete {
+  font-family: "Dosis", sans-serif;
+  font-size: 20px;
+}
+
+.delete:hover {
+  font-size: 22px;
+  color: rgb(177, 14, 14);
 }

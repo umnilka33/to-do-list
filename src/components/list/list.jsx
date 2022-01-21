@@ -7,13 +7,13 @@ import ToDoItem from '../item/item';
 const ToDoList = ({ tasksList, completeTask, removeTask }) => (
     <ul className="list">
         {tasksList.map(({ id, text, is_completed }) => (
-            <ToDoItem 
-                id={id} 
-                key={id} 
-                text={text} 
-                is_completed={is_completed} 
-                completeTask={completeTask} 
-                removeTask={removeTask} 
+            <ToDoItem
+                id={id}
+                key={id}
+                text={text}
+                is_completed={is_completed}
+                completeTask={completeTask}
+                removeTask={removeTask}
             />
         ))}
     </ul>

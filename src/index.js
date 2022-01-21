@@ -4,7 +4,6 @@ import { Provider } from 'react-redux';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 import GetTaskID from './components/task-detail/task-detail';
-import Error from './components/error/error';
 import store from './store'
 import App from './App'
 
@@ -13,8 +12,7 @@ ReactDOM.render(
     <BrowserRouter>
         <Routes>
           <Route path='/' element={<App />} />
-          <Route path='/:id' element={<GetTaskID infa={store} />} />
-          <Route path='*' element={<Error />} />
+          <Route path='/task/:id' element={<GetTaskID infa={store} />} />
         </Routes>
     </BrowserRouter>
   </Provider>,
