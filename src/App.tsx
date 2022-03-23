@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react'
-import Title from './components/title/title'
-import ToDo from './containers/todo/todo'
+import Title from './components/title'
+import ToDo from './containers/todo/index'
 
 import './App.css'
 

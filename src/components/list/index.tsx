@@ -1,10 +1,10 @@
 import React from 'react';
-import PropTypes from 'prop-types';
+import ToDoItem from '../item';
+import { ToDoListProps } from './list';
 
 import './list.css';
-import ToDoItem from '../item/item';
 
-const ToDoList = ({ tasksList, completeTask, removeTask }) => (
+const ToDoList = ({ tasksList, completeTask, removeTask }:ToDoListProps) => (
     <ul className="list">
         {tasksList.map(({ id, text, is_completed }) => (
             <ToDoItem
@@ -18,17 +18,5 @@ const ToDoList = ({ tasksList, completeTask, removeTask }) => (
         ))}
     </ul>
 )
-
-ToDoList.propTypes = {
-    tasksList: PropTypes.array,
-    completeTask: PropTypes.func,
-    removeTask: PropTypes.func,
-}
-
-ToDoList.defaultProps = {
-    tasksList: [],
-    completeTask: () => {},
-    removeTask: () => {},
-}
 
 export default ToDoList;
