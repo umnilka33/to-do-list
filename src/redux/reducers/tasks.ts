@@ -15,7 +15,6 @@ const initialState: stateTasks = [{id:12, text: 'test', is_completed: false}];
 const tasks = (state = initialState, {type, id, text, is_completed}: tasksProps):stateTasks => {
     switch (type) {
         case ADD_TASK:
-            console.log('im in ', type, ', state:', state)
             return [
                 ...state, {
                     id,
@@ -24,10 +23,8 @@ const tasks = (state = initialState, {type, id, text, is_completed}: tasksProps)
                 }
             ];
         case REMOVE_TASK:
-            console.log('im in ', type, ', state:', state)
             return [...state].filter(task => task.id !== id);
         case COMPLETE_TASK:
-            console.log('im in ', type, ', state:', state)
             return [...state].map(task => {
                 if (task.id === id) {
                     task.is_completed = !task.is_completed;

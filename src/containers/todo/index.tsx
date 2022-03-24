@@ -18,7 +18,7 @@ function ToDoC({ addTask, completeTask, removeTask, tasks }: { addTask: Function
         if (e.key === 'Enter') {
             if (inputText.length > 1) {
                 /* add task */
-                console.log(addTask({id:(new Date()).getTime(), text: inputText, is_completed: false}));
+                addTask({id:(new Date()).getTime(), text: inputText, is_completed: false});
 
                 /* clean input */
                 setInputText('');
@@ -26,7 +26,6 @@ function ToDoC({ addTask, completeTask, removeTask, tasks }: { addTask: Function
         }
     }
 
-    console.log('tasks: ', tasks)
     const isTasksExist = tasks && tasks.length > 0;
 
     return (
