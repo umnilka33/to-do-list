@@ -1,8 +1,7 @@
 import React, { useState, useEffect, Fragment } from 'react';
 import { useParams } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { TaskDetailProps } from './task-detail'
-import { tasksListProps } from '../list/list'
+import { tasksListProps, TaskDetailProps } from '../../common/types'
 
 function TaskDetailC(props: TaskDetailProps) {
     const [taskId, setTaskId] = useState(0);

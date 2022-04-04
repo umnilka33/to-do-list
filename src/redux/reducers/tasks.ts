@@ -1,16 +1,9 @@
 import { ADD_TASK, REMOVE_TASK, COMPLETE_TASK } from "../constants";
-import { tasksListProps } from '../../components/list/list'
-
-type tasksProps = {
-    type: (typeof ADD_TASK | typeof REMOVE_TASK | typeof COMPLETE_TASK)
-    id: number
-    text: string
-    is_completed: boolean
-}
+import { tasksListProps, tasksProps } from '../../common/types'
 
 export type stateTasks = tasksListProps[];
 
-const initialState: stateTasks = [{id:12, text: 'test', is_completed: false}];
+const initialState: stateTasks = [];
 
 const tasks = (state = initialState, {type, id, text, is_completed}: tasksProps):stateTasks => {
     switch (type) {

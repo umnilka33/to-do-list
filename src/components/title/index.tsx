@@ -1,5 +1,5 @@
 import React from 'react'
-import { TitleProps } from './title';
+import { TitleProps } from '../../common/types';
 
 import './title.css';
 

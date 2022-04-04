@@ -1,5 +1,5 @@
 import React from 'react';
-import { ToDoItemProps } from './item';
+import { ToDoItemProps } from '../../common/types';
 import { Link } from 'react-router-dom';
 import './item.css';
 

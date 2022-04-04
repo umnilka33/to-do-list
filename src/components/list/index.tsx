@@ -1,6 +1,6 @@
 import React from 'react';
 import ToDoItem from '../item';
-import { ToDoListProps } from './list';
+import { ToDoListProps } from '../../common/types';
 
 import './list.css';
 

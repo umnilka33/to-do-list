@@ -1,5 +1,5 @@
 import React from 'react';
-import { ToDoInputProps } from './input';
+import { ToDoInputProps } from '../../common/types';
 
 import './input.css';
 

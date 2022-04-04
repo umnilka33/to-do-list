@@ -1,5 +1,5 @@
 import { ADD_TASK, COMPLETE_TASK, REMOVE_TASK } from '../constants';
-import { tasksListProps } from '../../components/list/list'
+import { tasksListProps } from '../../common/types'
 
 export const addTask = ({ id, text, is_completed }:tasksListProps) => ({
   type: ADD_TASK,

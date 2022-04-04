@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 import { addTask, completeTask, removeTask } from '../../redux/actions/actionsCreator'
 import ToDoInput from '../../components/input'
 import ToDoList from '../../components/list';
-import { tasksListProps } from '../../components/list/list';
+import { tasksListProps } from '../../common/types';
 import './todo.css'
 
 function ToDoC({ addTask, completeTask, removeTask, tasks }: { addTask: Function; completeTask: Function;removeTask: Function;tasks: Array<tasksListProps>}) {
