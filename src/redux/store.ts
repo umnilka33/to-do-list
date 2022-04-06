@@ -1,12 +1,16 @@
 import { createStore, compose } from 'redux';
 import rootReducer from './reducers/index';
 
+import { applyMiddleware } from 'redux'
+import thunk from 'redux-thunk'
+import { composeWithDevTools } from 'redux-devtools-extension'
+
 /* eslint-disable no-underscore-dangle */
-const composeEnhancers =
-  process.env.NODE_ENV !== 'production' &&
+const composeEnhancers = composeWithDevTools(applyMiddleware(thunk))
+  /*process.env.NODE_ENV !== 'production' &&
   typeof window === 'object' &&
   (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?
-  (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}) : compose;
+  (window as any).__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({}) : compose;*/
 /* eslint-enable */
 
 const configureStore = (preloadedState: any) => (

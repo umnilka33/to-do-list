@@ -1,4 +1,4 @@
-input {
+.authorization input {
     border: none;
     border-bottom: #111 solid 2px;
     background: transparent;
@@ -10,7 +10,7 @@ input {
     color: #111;
     text-align: center;
   }
-  input:focus {
+  .authorization input:focus {
     outline: none;
     transform: scale(1.01);
   }
