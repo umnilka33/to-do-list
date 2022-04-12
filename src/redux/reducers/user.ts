@@ -17,13 +17,14 @@ const defaultState = {
 export default function userReducer(state = defaultState, {type, payload}:userAuthProps) {
     switch (type) {
         case SET_USER:
+            console.log('im in a set user', payload)
             return {
                 ...state,
                 currentUser: payload,
                 isAuth: true
             }
         case LOGOUT:
-            //localStorage.removeItem('token')
+            localStorage.removeItem('token')
             return {
                 ...state,
                 currentUser: {},
@@ -35,5 +36,5 @@ export default function userReducer(state = defaultState, {type, payload}:userAu
 }
 
 
-export const setUser =(user:userNameProps) => ({type: SET_USER, payload: user});
+export const setUser = (user:userNameProps) => ({type: SET_USER, payload: user});
 export const logout = () => ({type: LOGOUT});

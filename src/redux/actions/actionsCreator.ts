@@ -1,13 +1,12 @@
 import { ADD_TASK, COMPLETE_TASK, REMOVE_TASK } from '../constants';
 import { tasksListProps } from '../../common/types'
 import { setUser } from '../reducers/user';
-import { Dispatch } from 'redux';
-import axios from 'axios';
 
-type loginProps = {
-  email: string,
-  password: string
-}
+import axios from 'axios';
+import '../api/fakeAPI'
+
+import { ThunkAction, ThunkDispatch } from 'redux-thunk'
+import { AnyAction } from 'redux';
 
 export const addTask = ({ id, text, is_completed }:tasksListProps) => ({
   type: ADD_TASK,
@@ -26,20 +25,21 @@ export const removeTask = (id:number) => ({
   id
 });
 
-export const login =  ({ email, password }:loginProps) => {
-  console.log('e:', email, ' p:', password)
-  return async (dispatch:Dispatch<any>) => {
-      try {
-          const response = await axios.post(`http://localhost:5000/api/auth/login`, {
-              email,
-              password
-          })
-          console.log('IT works', response.data.user)
-          dispatch(setUser(response.data.user))
-          //localStorage.setItem('token', response.data.token)
-      } catch (e) {
-          //alert(e.response.data.message)
-          console.log('nothing works')
+export const login = (email: string, password: string): ThunkAction<Promise<void>, {}, {}, AnyAction> => {
+  // Invoke API
+  return async (dispatch: ThunkDispatch<{}, {}, AnyAction>): Promise<void> => {
+    try {
+      const response = await axios.post(`/api/auth/login`, {
+        email,
+        password
+      })
+      if (response.data[0].code === 0) {
+        dispatch(setUser(response.data))
+        localStorage.setItem('name', response.data[0].name)
+        console.log(localStorage)
       }
+    } catch (e) {
+      console.log('nothing works')
+    }
   }
 }

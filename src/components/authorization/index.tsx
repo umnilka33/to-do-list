@@ -21,7 +21,7 @@ const Login = () => {
             <div className="authorization__header">Sign in</div>
             <Input onChange={handleEmailInputChange} value={email} type="text" placeholder="Email..."/>
             <Input onChange={handlePasswordInputChange} value={password} type="password" placeholder="Password..."/>
-            <button className="authorization__btn" onClick={() => dispatch(login({email, password}))} >GO</button>
+            <button className="authorization__btn" onClick={() => dispatch(login(email, password))} >GO</button>
         </div>
     );
 };
