@@ -1,4 +1,4 @@
-import { ADD_TASK, REMOVE_TASK, COMPLETE_TASK } from "../redux/constants";
+import { ADD_TASK, REMOVE_TASK, COMPLETE_TASK, SET_USER, LOGOUT } from "../redux/constants";
 
 /* * * All files types * * */
 
@@ -48,4 +48,18 @@ export type tasksProps = {
 
 export type TitleProps = {
     title: string
+}
+
+export type stateTasks = tasksListProps[];
+
+export type userNameProps = {
+    user: string
+}
+
+export type userAuthProps = {
+    type: (typeof SET_USER | typeof LOGOUT),
+    payload: {
+        name: string,
+        token: string
+    }
 }

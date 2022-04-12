@@ -1,16 +1,5 @@
 import { SET_USER, LOGOUT } from "../constants"
-
-type userNameProps = {
-    user: string
-}
-
-type userAuthProps = {
-    type: (typeof SET_USER | typeof LOGOUT),
-    payload: {
-        name: string,
-        token: string
-    }
-}
+import { userNameProps, userAuthProps } from '../../common/types'
 
 const currentUserData = localStorage.getItem('name') === null?{}:{name:localStorage.getItem('name'), token:localStorage.getItem('token')};
 const defaultState = {

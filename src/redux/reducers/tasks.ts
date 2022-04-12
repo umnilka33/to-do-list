@@ -1,7 +1,5 @@
 import { ADD_TASK, REMOVE_TASK, COMPLETE_TASK } from "../constants";
-import { tasksListProps, tasksProps } from '../../common/types'
-
-export type stateTasks = tasksListProps[];
+import { tasksProps, stateTasks } from '../../common/types'
 
 const initialState: stateTasks = [];
 
