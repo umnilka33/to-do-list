@@ -1,13 +1,13 @@
 import React, { Fragment } from 'react'
-import { Title } from './components/title'
-import { ToDo } from './containers/todo/index'
-import { GetTaskID } from './components/task-detail/index';
-import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
 import { useSelector } from "react-redux";
-import type { RootState } from './redux/store'
+import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom';
+import { GetTaskID } from './components/task-detail/index';
 import { Login } from './components/authorization';
-import './App.css'
+import type { RootState } from './redux/store';
+import { ToDo } from './containers/todo/index';
 import { Logout } from './components/logout';
+import { Title } from './components/title';
+import './App.css'
 
 function App() {
     const isAuth = useSelector((state:RootState) => state.user.isAuth)

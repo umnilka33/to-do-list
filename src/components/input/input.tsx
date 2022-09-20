@@ -13,7 +13,8 @@ const ToDoInput = ({ value = '', onChange, onKeyPress }:ToDoInputProps) => (
         placeholder="Add your task"
         onChange={onChange}
         value={value}
-        onKeyPress={onKeyPress} />
+        onKeyPress={onKeyPress} 
+        autoComplete="off"/>
     </div>
   </div>
 );
