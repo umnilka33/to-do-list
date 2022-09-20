@@ -1,3 +1,4 @@
+![image](https://github.com/umnilka33/to-do-list/blob/dev/src/common/gif/todogif.gif)
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
